@@ -38,11 +38,15 @@ function onSubmit(ev) {
   ev.preventDefault();
 
   if (!refs.message.value || !refs.email.value) {
-    return console.log('Seriously? Why do I need an empty field??? =)');
+    return console.log(' ⚠️ Seriously? Why do I need an empty field??? 🙃 ');
   }
-
+  
   console.log(formData);
-
   ev.currentTarget.reset();
+  clearFormData();
+}
+
+function clearFormData() {
   localStorage.removeItem(STORAGE_FORM);
+  (formData.email = ''), (formData.message = '');
 }
